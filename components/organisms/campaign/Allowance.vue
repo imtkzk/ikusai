@@ -92,16 +92,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="cta-btn">
-                        <div class="cmn-btn cmn-btn--main cmn-btn--high">
-                            <div></div>
-                            <p>より詳しく知りたい方は<br>無料オンライン説明会を予約する</p>
-                        </div>
-                    </div>
+                            <CampaignCTABtn>より詳しく知りたい方は<br>無料オンライン説明会を予約する</CampaignCTABtn>
                 </div>
             </section>
 </template>
 
+<script>
+import CampaignCTABtn from '~/components/atoms/buttons/CampaignCTABtn.vue'
+
+export default {
+  components: {
+    CampaignCTABtn
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~assets/scss/style.scss";
@@ -117,7 +121,6 @@
   padding: vw-sp(145) 0 vw-sp(90) 0;
   background-image: -moz-linear-gradient( -60deg, rgb(41,108,0) 0%, rgb(137,221,175) 0%, rgb(37,208,115) 100%);
   background-image: -webkit-linear-gradient( -60deg, rgb(41,108,0) 0%, rgb(137,221,175) 0%, rgb(37,208,115) 100%);
-  background-image: -ms-linear-gradient( -60deg, rgb(41,108,0) 0%, rgb(137,221,175) 0%, rgb(37,208,115) 100%);
 }
 
 @media screen and (min-width: $breakpoint1) {
@@ -390,7 +393,6 @@
   height: vw-sp(200);
   background-image: -moz-linear-gradient( 130deg, rgba(250,209,38,0.99608) 0%, rgb(255,183,79) 100%);
   background-image: -webkit-linear-gradient( 130deg, rgba(250,209,38,0.99608) 0%, rgb(255,183,79) 100%);
-  background-image: -ms-linear-gradient( 130deg, rgba(250,209,38,0.99608) 0%, rgb(255,183,79) 100%);
   font-size: vw-sp(26);
 }
 

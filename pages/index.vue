@@ -5,20 +5,7 @@
             <Hero />
             <Benefit />
             <Explain />
-            <section id="course" class="sec sec--course">
-                <div class="sec__in">
-                    <div class="cmn-head cmn-head--course">
-                        <p class="cmn-head__en">course</p>
-                        <h2 class="cmn-head__jp">JDLA E資格認定！<br class="br--sp">基礎から実践まで長期コース</h2>
-                    </div>
-                    <div class="course">
-                        <Target />
-                        <Reason />
-                        <Skills />
-                        <Examples />
-                    </div>
-                </div>
-            </section>
+            <Course />
             <Flow />
             <LearningStyle />
             <AvailableContents />
@@ -35,10 +22,7 @@
     import Hero from '~/components/organisms/campaign/Hero.vue'
     import Benefit from '~/components/organisms/campaign/Benefit.vue'
     import Explain from '~/components/organisms/campaign/Explain.vue'
-    import Target from '~/components/organisms/campaign/Target.vue'
-    import Reason from '~/components/organisms/campaign/Reason.vue'
-    import Skills from '~/components/organisms/campaign/Skills.vue'
-    import Examples from '~/components/organisms/campaign/Examples.vue'
+    import Course from '~/components/organisms/campaign/Course.vue'
     import Flow from '~/components/organisms/campaign/Flow.vue'
     import LearningStyle from '~/components/organisms/campaign/LearningStyle.vue'
     import AvailableContents from '~/components/organisms/campaign/AvailableContents.vue'
@@ -53,10 +37,7 @@
             Hero,
             Benefit,
             Explain,
-            Target,
-            Reason,
-            Skills,
-            Examples,
+            Course,
             Flow,
             LearningStyle,
             AvailableContents,

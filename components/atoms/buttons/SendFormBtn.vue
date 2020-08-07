@@ -1,10 +1,11 @@
 <template>
-    <div class="hero-btn">
-        <div class="cmn-btn cmn-btn--main cmn-btn--low">
-            <div></div>
-            <p>まずは無料オンライン説明会を予約する</p>
-        </div>
-    </div>
+
+                                <div class="form-btn">
+                                    <div class="cmn-btn cmn-btn--main cmn-btn--low">
+                                        <div></div>
+                                        <p><button type="submit" name="" value="submit" class="form-submit-btn">記入内容で申し込む（無料）</button></p>
+                                    </div>
+                                </div>
 </template>
 
 <style lang="scss" scoped>
@@ -14,6 +15,52 @@
 ------------------------------------------------------------------------------*/
 
 /* ---------------------------------- btn */
+/* ---------------------------------- component --> form-btn */
+
+.form-btn {
+  margin: 0 auto;
+  width: vw-sp(500);
+  .cmn-btn {
+    border: none !important;
+  }
+}
+
+.form-submit-btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: $color-base;
+  font-size: vw-sp(26);
+  font-weight: 700;
+  letter-spacing: .1em;
+}
+
+.form-submit-btn:hover {
+  color: #ff9f01;
+}
+
+@media screen and (min-width: $breakpoint1) {
+
+  .form-btn {
+    width: vw-pc(345);
+  }
+
+  .form-submit-btn {
+    font-size: vw-pc(16);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .form-btn {
+    width: 345px;
+  }
+
+  .form-submit-btn {
+    font-size: 16px; font-size: 1.6rem;
+  }
+}
+
 
 .cmn-btn {
   position: relative;

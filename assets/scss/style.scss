@@ -1,11 +1,753 @@
-//compileExpanded: ../css/$1.css
+/*  RESET CSS
+------------------------------------------------------------------------------*/
 
-@import 'base/reset';
-@import 'base/variable';
-@import 'base/base';
-@import 'layout/main';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-@import 'component/heading';
-@import 'component/button';
+*,
+::before,
+::after {
+	background-repeat: no-repeat;
+}
 
-@import 'base/utils';
+::before,
+::after {
+	text-decoration: inherit;
+	vertical-align: inherit;
+}
+
+html, body {
+	font-size: 62.5%;
+	-webkit-overflow-scrolling: touch;
+}
+
+html {
+	overflow-y: scroll;
+	cursor: default;
+}
+
+body {
+	line-height: 1;
+  font-weight: 400;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-print-color-adjust: exact;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 1em;
+	font-weight: normal;
+	line-height: 1.4em;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section, summary {
+	display: block;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+th {
+	font-weight: normal;
+}
+
+td, th {
+	padding: 0;
+}
+
+blockquote {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+
+a {
+	color: inherit;
+	background-color: transparent;
+	text-decoration: none;
+	-webkit-text-decoration-skip: objects;
+	cursor: pointer;
+}
+
+a:active, a:hover {
+	outline-width: 0;
+}
+
+a:focus, *:focus {
+	outline: none;
+}
+
+img {
+	border-style: none;
+	vertical-align: bottom;
+}
+
+[type="text"],
+[type="tel"],
+[type="email"],
+[type="date"],
+[type="number"],
+[type="submit"],
+[type="button"],
+button, textarea, select {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input, select {
+	vertical-align: middle;
+}
+
+select {
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+select::-ms-expand{
+	display: none;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button, [type="button"], [type="reset"], [type="submit"], [role="button"] {
+	cursor: pointer;
+}
+
+/* IEのinput要素に出てくるマークを消去 */
+input::-ms-clear {
+	visibility: hidden;
+}
+
+/* IEのinput要素に出てくるマークを消去 */
+input::-ms-reveal {
+	visibility: hidden;
+}
+$color-base: #fff;
+$color-main: #28d089;
+$color-thin: #e9f9f2;
+$color-text: #16325e;
+
+$font1: 'Noto Sans JP', sans-serif;
+$font2: 'Montserrat', sans-serif;
+
+$breakpoint1: 801px;
+$breakpoint1-max: 800px;
+$breakpoint2: 1601px;
+$breakpoint2-max: 1600px;
+$max-width: 1200px;
+$sp-width: 750;
+$pc-width: 1600;
+
+@function vw-sp($size, $viewport:750) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@function vw-pc($size, $viewport:1600) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+@mixin marker {
+  background:linear-gradient(transparent 60%, #f9ff49 60%);
+}
+
+/*  THEME CSS
+------------------------------------------------------------------------------*/
+html {
+	font-size: 62.5%;
+  }
+
+  body {
+	width: 100%;
+	height: 100%;
+	color: $color-text;
+	background-color: $color-base;
+	font-family: $font1;
+	font-size: vw-sp(26);
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: .1em;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	overflow-x: hidden;
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+	body{
+	  font-size: vw-pc(16);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	body{
+	  font-size: 1.6em;
+	}
+  }
+  
+  
+  /*  リンク
+  -------------------------------------------------------*/
+  
+  a {
+	transition: all .3s;
+  }
+  
+  a:hover {
+	cursor: pointer;
+  }
+  
+  a.on--opa {
+	display: block;
+  }
+  
+  a.on--opa:hover {
+	opacity: 0.7;
+  }
+  
+
+/*  UTILIS
+------------------------------------------------------------------------------*/
+
+/*  配置
+-------------------------------------------------------*/
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+@media screen and (max-width: $breakpoint1-max) {
+	.none--sp { display: none  !important; }
+	.br__sp { display: block; }
+  .br--pc { display: none;}
+}
+
+@media screen and (min-width: $breakpoint1) {
+	.none--pc { display: none  !important;}
+	.br__sp { display: inline; }
+  .br--sp { display: none;}
+}
+
+/*  画像
+-------------------------------------------------------*/
+
+.img--fit {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+/*  layout
+------------------------------------------------------------------------------*/
+
+.container {
+	margin: 0 auto;
+	padding-top: vw-sp(150);
+	width: 100%;
+  }
+  
+  .sec {
+	position: relative;
+  }
+  
+  .sec__in {
+	position: relative;
+	margin: 0 auto;
+	width: vw-sp(690);
+  }
+  
+  @media screen and ( min-width:$breakpoint1) {
+  
+	.container {
+	  padding-top: vw-pc(100);
+	}
+  
+	.sec__in {
+	  width: vw-pc(1200);
+	}
+  
+	.sec__in--small {
+	  width: vw-pc(1000);
+	}
+  
+	.sec__in--large {
+	  width: vw-pc(1400);
+	}
+  }
+  
+  @media screen and ( min-width:$breakpoint2) {
+  
+	.container {
+	  padding-top: 100px;
+	}
+  
+	.sec__in {
+	  width: $max-width;
+	}
+  
+	.sec__in--small {
+	  width: 1000px;
+	}
+  
+	.sec__in--large {
+	  width: 1400px;
+	}
+  }
+/*  heading
+------------------------------------------------------------------------------*/
+
+/* ---------------------------------- common heading */
+
+.cmn-head {
+	position: relative;
+  }
+  
+  .cmn-head__en {
+	margin-bottom: 1.3em;
+	padding-left: .15em;
+	color: $color-main;
+	font-family: $font2;
+	font-size: vw-sp(25);
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .15em;
+  }
+  
+  .cmn-head__jp {
+	padding-left: .2em;
+	font-size: vw-sp(40);
+	text-align: center;
+	font-weight: 700;
+	letter-spacing: .2em;
+	z-index: 2;
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.cmn-head__en {
+	  font-size: vw-pc(15);
+	}
+  
+	.cmn-head__jp {
+	  font-size: vw-pc(30);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.cmn-head__en {
+	  font-size: 15px; font-size: 1.5rem;
+	}
+  
+	.cmn-head__jp {
+	  font-size: 30px; font-size: 3.0rem;
+	}
+  }
+  
+  
+  /* ---------------------------------- diago heading */
+  
+  .diago-header {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: vw-sp(45);
+	padding: 0 2em;
+	background-color: $color-main;
+	min-width: vw-sp(400);
+	height: vw-sp(60);
+	transform: skewX(-20deg);
+  }
+  
+  .diago-head {
+	color: $color-base;
+	font-size: vw-sp(34);
+	font-weight: 700;
+	transform: skewX(20deg);
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.diago-header {
+	  margin-bottom: vw-pc(35);
+	  min-width: vw-pc(300);
+	  height: vw-pc(45);
+	}
+  
+	.diago-head {
+	  font-size: vw-pc(24);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.diago-header {
+	  margin-bottom: 35px;
+	  min-width: 300px;
+	  height: 45px;
+	}
+  
+	.diago-head {
+	  font-size: 24px; font-size: 2.4rem;
+	}
+  }
+
+/*  style
+------------------------------------------------------------------------------*/
+
+/* ---------------------------------- section */
+
+.sec--style {
+	padding: vw-sp(50) 0 vw-sp(100) 0;
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.sec--style {
+	  padding: vw-pc(40) 0 vw-pc(75) 0;
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.sec--style {
+	  padding: 40px 0 75px 0;
+	}
+  }
+  
+  
+  /* ---------------------------------- heading */
+  
+  .cmn-head--style {
+	margin-bottom: vw-sp(100);
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.cmn-head--style {
+	  margin-bottom: vw-pc(70);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.cmn-head--style {
+	  margin-bottom: 70px;
+	}
+  }
+  
+  
+  /* ---------------------------------- component */
+  
+  .style-tab-label {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: vw-sp(330);
+	height: vw-sp(80);
+	background-image: -moz-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
+	background-image: -webkit-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
+	background-image: -ms-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
+	border-radius: vw-sp(45);
+	box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+	color: $color-base;
+	font-size: vw-sp(32);
+	font-weight: 700;
+	letter-spacing: .3em;
+	order: -1;
+  }
+  
+  .style-tab-label:after {
+	content: '▼';
+	margin-left: .5em;
+	font-size: vw-sp(26);
+  }
+  
+  .style-tab-content {
+	margin-top: vw-sp(130);
+	width: 100%;
+	display: none;
+	transition: .3s;
+  }
+  
+  .style-tab-switch:checked+.style-tab-label {
+	background-image: none;
+	background-color: #e9f9f2;
+	box-shadow: none;
+	color: $color-main;
+  }
+  
+  .style-tab-switch:checked+.style-tab-label:after {
+	position: absolute;
+	left: 50%;
+	bottom: vw-sp(-60);
+	margin-left: 0;
+	color: $color-main;
+	font-size: vw-sp(46);
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+  }
+  
+  .style-tab-switch:checked+.style-tab-label+.style-tab-content {
+	display: block;
+  }
+  
+  .style-tab-switch {
+	display: none;
+  }
+  
+  .fade{
+	animation: fadeIn 1s linear;
+  }
+  
+  @keyframes fadeIn {
+	0% {opacity: 0}
+	100% {opacity: 1}
+  }
+  
+  .style-tabs {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.style-tab-label {
+	  width: vw-pc(580);
+	  height: vw-pc(70);
+	  border-radius: vw-pc(35);
+	  font-size: vw-pc(24);
+	}
+  
+	.style-tab-label:after {
+	  margin-left: 1em;
+	  font-size: vw-pc(18);
+	}
+  
+	.style-tab-content {
+	  margin-top: vw-pc(120);
+	}
+  
+	.style-tab-switch:checked+.style-tab-label:after {
+	  bottom: vw-pc(-50);
+	  font-size: vw-pc(36);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.style-tab-label {
+	  width: 580px;
+	  height: 70px;
+	  border-radius: 35px;
+	  font-size: 24px; font-size: 2.4rem;
+	}
+  
+	.style-tab-label:after {
+	  font-size: 18px; font-size: 1.8rem;
+	}
+  
+	.style-tab-content {
+	  margin-top: 120px;
+	  width: 100%;
+	}
+  
+	.style-tab-switch:checked+.style-tab-label:after {
+	  bottom: -50px;
+	  font-size: 36px; font-size: 3.6rem;
+	}
+  }
+  
+  
+  .style {
+	position: relative;
+	margin: 0 0 vw-sp(45) 0;
+	z-index: 2;
+  }
+  
+  .style:before {
+	content: '';
+	position: absolute;
+	top: vw-sp(200);
+	left: 50%;
+	width: vw-sp(750);
+	height: calc(100% - #{vw-sp(130)});
+	background-color: #e9f9f2;
+	z-index: -1;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+  }
+  
+  .style li {
+	margin: 0 auto vw-sp(80) auto;
+	width: vw-sp(650);
+  }
+  
+  .style-image {
+	position: relative;
+  }
+  
+  .style-head {
+	position: absolute;
+	left: 0;
+	bottom: vw-sp(-35);
+	display: inline-flex;
+	align-items: center;
+	padding: 0 1em;
+	height: vw-sp(70);
+	background-color: $color-main;
+	color: $color-base;
+	font-size: vw-sp(28);
+	font-weight: 700;
+  }
+  
+  .style-content {
+	padding-top: vw-sp(45);
+	p {
+	  line-height: 1.8em;
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.style {
+	  display: flex;
+	  margin: 0 0 vw-pc(35) vw-pc(-60);
+	}
+  
+	.style:before {
+	  top: vw-pc(100);
+	  width: vw-pc(1400);
+	  height: vw-pc(325);
+	}
+  
+	.style li {
+	  margin: 0 0 0 vw-pc(60);
+	  width: calc(33.33333% - #{vw-pc(60)});
+	}
+  
+	.style-head {
+	  bottom: vw-pc(-20);
+	  height: vw-pc(40);
+	  font-size: vw-pc(18);
+	}
+  
+	.style-content {
+	  padding-top: vw-pc(35);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.style {
+	  margin: 0 0 35px -60px;
+	}
+  
+	.style:before {
+	  top: 100px;
+	  width: 1400px;
+	  height: 325px;
+	}
+  
+	.style li {
+	  margin: 0 0 0 60px;
+	  width: calc(33.33333% - 60px);
+	}
+  
+	.style-head {
+	  bottom: -20px;
+	  height: 40px;
+	  font-size: 18px; font-size: 1.8rem;
+	}
+  
+	.style-content {
+	  padding-top: 35px;
+	}
+  }
+  
+  
+  /* ---------------------------------- illust */
+  
+  .style-illust {
+	display: none;
+  }
+  
+  @media screen and (min-width: $breakpoint1) {
+  
+	.style-illust {
+	  position: absolute;
+	  display: block;
+	}
+  
+	.style-illust01 {
+	  top: vw-pc(270);
+	  left: vw-pc(-20);
+	  width: vw-pc(165);
+	}
+  
+	.style-illust02 {
+	  bottom: vw-pc(65);
+	  left: vw-pc(-20);
+	  width: vw-pc(209);
+	}
+  
+	.style-illust03 {
+	  bottom: vw-pc(30);
+	  right: vw-pc(-20);
+	  width: vw-pc(143);
+	}
+  }
+  
+  @media screen and (min-width: $breakpoint2) {
+  
+	.style-illust01 {
+	  top: 280px;
+	  left: 0;
+	  width: 165px;
+	}
+  
+	.style-illust02 {
+	  bottom: 65px;
+	  left: 0;
+	  width: 209px;
+	}
+  
+	.style-illust03 {
+	  bottom: 40px;
+	  right: 0;
+	  width: 143px;
+	}
+  }
+  

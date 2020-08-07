@@ -13,13 +13,13 @@
                         <img src="~/assets/img/course/example01.png" srcset="~/assets/img/course/example01.png 1x,~/assets/img/course/example01-2x.png 2x" alt="異常検知アプリ">
                     </div>
                     <div class="course-example-content">
-                        <h3 class="course-example-head">異常検知アプリ</h3>
+                        <h3 class="course-example-head">{{item.productTitle}}</h3>
                         <dl class="course-example-target">
                             <dt>受講開始時</dt>
-                            <dd>AI初心者</dd>
+                            <dd>{{item.status}}</dd>
                         </dl>
                         <div class="course-example-fukidashi">
-                            <p>物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション</p>
+                            <p>{{item.explanation}}</p>
                         </div>
                     </div>
                 </swiper-slide>
@@ -28,23 +28,24 @@
             <div id="example-slide-prev" class="example-slide-prev" slot="button-prev"></div>
             <div id="example-slide-next" class="example-slide-next" slot="button-next"></div>
         </div>
-        <div class="cta-btn">
-            <div class="cmn-btn cmn-btn--main cmn-btn--high">
-                <div></div>
-                <p>より詳しく知りたい方は<br>無料オンライン説明会を予約する</p>
-            </div>
-        </div>
+            <CampaignCTABtn>より詳しく知りたい方は<br>無料オンライン説明会を予約する</CampaignCTABtn>
     </div>
 </template>
 
 <script>
+import CampaignCTABtn from '~/components/atoms/buttons/CampaignCTABtn.vue'
     export default {
+
+  components: {
+    CampaignCTABtn
+  },
         data() {
             return {
                 swiperOption: {
                     loop: false,
-                    slidesPerView: 3,
-                    spaceBetween: 30,
+                    centeredSlides : true,
+                    slidesPerView: 1.2,
+                    spaceBetween: 20,
                     speed: 1500,
                     autoplay: {
                         delay: 1500,
@@ -59,36 +60,46 @@
                         clickable: true
                     },
                     breakpoints: {
-                        750: {
-                            centeredSlides: true,
-                            spaceBetween: 20,
-                            slidesPerView: 1.2,
-                        }
+                      750: {
+                        centeredSlides : false,
+                        spaceBetween: 30,
+                        slidesPerView: 3,
+                      }
                     }
                 },
-                el:'swiper-slide',
                 items: [{
                             productTitle: '異常検知アプリ',
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
                         },
                         {
                             productTitle: '異常検知アプリ',
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
                         },
                         {
                             productTitle: '異常検知アプリ',
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
                         },
                         {
                             productTitle: '異常検知アプリ',
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
                         },
                         {
                             productTitle: '異常検知アプリ',
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
                         },
                         {
                             productTitle: '異常検知アプリ',
-                        },
+                            status: 'AI初心者',
+                            explanation: '物体検知の技術を活用し、製品画像内に含まれる傷を検出し、取り除くアプリケーション'
+                        }
                         ]
-        }
+                }
             }
-        
     }
 </script>
 
@@ -599,7 +610,7 @@
         text-align: center;
     }
 
-    .example-slide-pagination .swiper-pagination-bullet {
+    .example-slide-pagination /deep/ .swiper-pagination-bullet {
         left: 50%;
         bottom: 0 !important;
         margin: 0 .7em !important;
@@ -611,7 +622,7 @@
     }
 
 
-    .example-slide-pagination .swiper-pagination-bullet-active {
+    .example-slide-pagination /deep/ .swiper-pagination-bullet-active {
         opacity: 1;
         background: #15b48a
     }
@@ -637,7 +648,7 @@
             padding: vw-pc(40) 0 0 0;
         }
 
-        .example-slide-pagination .swiper-pagination-bullet {
+        .example-slide-pagination /deep/ .swiper-pagination-bullet {
             width: vw-pc(7);
             height: vw-pc(7);
         }
@@ -664,9 +675,12 @@
             padding: 40px 0 0 0;
         }
 
-        .example-slide-pagination .swiper-pagination-bullet {
+        .example-slide-pagination /deep/ .swiper-pagination-bullet {
             width: 7px;
             height: 7px;
         }
     }
+   .swiper-container{
+       overflow: visible;
+   }
 </style>

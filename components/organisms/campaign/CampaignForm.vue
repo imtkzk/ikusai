@@ -22,11 +22,12 @@
                             <h3 class="reserv-head">ご希望のオンライン説明会の<br class="br--sp">参加日程を選択してください。</h3>
                             <div class="reserv-box__in">
                                 <div class="form-campaign-date">
-                                    <label><input type="radio" name="my-radio" checked><span>2020年9月1日 18:00 ~ 19:00</span></label>
-                                    <label><input type="radio" name="my-radio"><span>2020年9月1日 18:00 ~ 19:00</span></label>
-                                    <label><input type="radio" name="my-radio"><span>2020年9月1日 18:00 ~ 19:00</span></label>
-                                    <label><input type="radio" name="my-radio"><span>2020年9月1日 18:00 ~ 19:00</span></label>
-                                    <label><input type="radio" name="my-radio"><span>2020年9月1日 18:00 ~ 19:00</span></label>
+                                    <InputSelectChecked>2020年9月1日 18:00 ~ 19:00</InputSelectChecked>
+                                    <InputSelect>2020年9月3日 18:00 ~ 19:00</InputSelect>
+                                    <InputSelect>2020年9月3日 18:00 ~ 19:00</InputSelect>
+                                    <InputSelect>2020年9月3日 18:00 ~ 19:00</InputSelect>
+                                    <InputSelect>2020年9月3日 18:00 ~ 19:00</InputSelect>
+                                    <InputSelect>2020年9月3日 18:00 ~ 19:00</InputSelect>
                                 </div>
                             </div>
                         </div>
@@ -41,27 +42,11 @@
                             </ul>
                             <h3 class="reserv-head">基本情報を入力して予約</h3>
                             <div class="reserv-box__in form-campaign">
-                                <dl class="form-input">
-                                    <dt>名前</dt>
-                                    <dd><input type="text" placeholder="例）田中 太郎"></dd>
-                                </dl>
-                                <dl class="form-input">
-                                    <dt>メールアドレス</dt>
-                                    <dd><input type="email" placeholder="例）ikusai@ikus.ai"></dd>
-                                </dl>
-                                <dl class="form-input">
-                                    <dt>メールアドレス(確認用)</dt>
-                                    <dd><input type="email" placeholder="例）ikusai@ikus.ai"></dd>
-                                </dl>
-                                <div class="form-consent">
-                                    <label><input type="checkbox" name="" required="required"><span>プライバシーポリシーに同意する</span></label>
-                                </div>
-                                <div class="form-btn">
-                                    <div class="cmn-btn cmn-btn--main cmn-btn--low">
-                                        <div></div>
-                                        <p><button type="submit" name="" value="submit" class="form-submit-btn">記入内容で申し込む（無料）</button></p>
-                                    </div>
-                                </div>
+                              <InputText placeholder="例）田中 太郎">名前</InputText>
+                              <InputText placeholder="例）ikusai@ikus.ai">メールアドレス</InputText>
+                              <InputText placeholder="例）ikusai@ikus.ai">メールアドレス(確認用)</InputText>
+                              <InputCheck />>
+                                        <SendFormBtn />
                             </div>
                         </div>
                     </div>
@@ -69,10 +54,26 @@
             </section>
 </template>
 
+<script>
+import SendFormBtn from '~/components/atoms/buttons/SendFormBtn.vue'
+import InputSelect from '~/components/atoms/Forms/InputSelect.vue'
+import InputSelectChecked from '~/components/atoms/Forms/InputSelectChecked.vue'
+import InputText from '~/components/atoms/Forms/InputText.vue'
+import InputCheck from '~/components/atoms/Forms/InputCheck.vue'
+
+export default {
+  components: {
+    SendFormBtn,
+    InputSelect,
+    InputSelectChecked,
+    InputText,
+    InputCheck
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~assets/scss/style.scss";
-// main: ../style.scss
 
 /*  form
 ------------------------------------------------------------------------------*/
@@ -493,129 +494,6 @@ textarea::-moz-placeholder {
     width: 20px;
     height: 20px;
     border: 10px solid $color-base;
-  }
-}
-
-/* ---------------------------------- component --> form-consent */
-
-.form-consent {
-  margin: vw-sp(50) 0 vw-sp(60) 0;
-  font-size: vw-sp(26);
-  font-weight: 700;
-  text-align: center;
-}
-
-.form-campaign input[type="checkbox"] {
-  display: none;
-}
-
-.form-campaign input[type="checkbox"] + span {
-  position: relative;
-  display: inline-block;
-  padding: 0 0 0 2em;
-  cursor: pointer;
-}
-
-.form-campaign input[type="checkbox"] + span::before {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 0;
-  display: block;
-  width: 1.3em;
-  height: 1.3em;
-  background-color: #f8f8f8;
-  border: 1px solid $color-main;
-  border-radius: 0;
-  transform: translateY(-50%);
-}
-
-.form-campaign input[type="checkbox"]:checked + span::after {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 0;
-  display: block;
-  width: 1.3em;
-  height: .6em;
-  margin-top: -.2em;
-  border-left: vw-sp(5) solid $color-main;
-  border-bottom: vw-sp(5) solid $color-main;
-  transform: translateY(-50%) rotate(-45deg);
-}
-
-
-@media screen and (min-width: $breakpoint1) {
-
-  .form-consent {
-    margin: vw-pc(30) 0 vw-pc(40) 0;
-    font-size: vw-pc(16);
-  }
-
-  .form-campaign input[type="checkbox"]:checked + span::after {
-    border-left: vw-pc(3) solid $color-main;
-    border-bottom: vw-pc(3) solid $color-main;
-  }
-}
-
-@media screen and (min-width: $breakpoint2) {
-
-  .form-consent {
-    margin: 30px 0 40px 0;
-    font-size: 16px; font-size: 1.6rem;
-  }
-
-  .form-campaign input[type="checkbox"]:checked + span::after {
-    border-left: 3px solid $color-main;
-    border-bottom: 3px solid $color-main;
-  }
-}
-
-
-
-/* ---------------------------------- component --> form-btn */
-
-.form-btn {
-  margin: 0 auto;
-  width: vw-sp(500);
-  .cmn-btn {
-    border: none !important;
-  }
-}
-
-.form-submit-btn {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: $color-base;
-  font-size: vw-sp(26);
-  font-weight: 700;
-  letter-spacing: .1em;
-}
-
-.form-submit-btn:hover {
-  color: #ff9f01;
-}
-
-@media screen and (min-width: $breakpoint1) {
-
-  .form-btn {
-    width: vw-pc(345);
-  }
-
-  .form-submit-btn {
-    font-size: vw-pc(16);
-  }
-}
-
-@media screen and (min-width: $breakpoint2) {
-
-  .form-btn {
-    width: 345px;
-  }
-
-  .form-submit-btn {
-    font-size: 16px; font-size: 1.6rem;
   }
 }
 

@@ -31,6 +31,135 @@
 
 <style lang="scss" scoped>
 @import "~assets/scss/style.scss";
+
+/* ---------------------------------- signup btn */
+
+.signup-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: vw-sp(400);
+  max-width: 100%;
+  height: vw-sp(90);
+  background-image: -moz-linear-gradient( 0deg, rgb(41,108,0) 0%, rgb(104,224,159) 0%, rgb(36,203,112) 100%);
+  background-image: -webkit-linear-gradient( 0deg, rgb(41,108,0) 0%, rgb(104,224,159) 0%, rgb(36,203,112) 100%);
+  border-radius: 2em;
+  box-shadow: 0px 6px 20px 0px rgba(0, 0, 0, 0.2);
+  font-family: $font2,$font1;
+  text-align: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.signup-btn a {
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: .5em 0;
+  width: 100%;
+  height: vw-sp(90);
+  color: $color-base;
+  font-size: vw-sp(28);
+  font-weight: 700;
+  text-decoration:none;
+  transition:all .5s ease;
+  z-index: 2;
+}
+
+.signup-btn a:hover {
+  color: $color-main;
+}
+
+.signup-btn > div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: vw-sp(90);
+  left: -100%;
+  background-color: $color-base;
+  transition:all .5s ease;
+  z-index: 1;
+}
+
+.signup-btn:hover > div {
+  left: 0;
+  height: 100%;
+}
+
+.signup-btn span {
+  display: block;
+  width: 100%;
+  font-size: vw-sp(20);
+}
+
+.signup-btn span:nth-of-type(1) {
+  margin-bottom: .5em;
+}
+
+
+@media screen and (min-width: $breakpoint1) {
+
+  .signup-btn {
+    margin: 0;
+    width: vw-pc(200);
+    height: vw-pc(60);
+  }
+
+  .signup-btn a {
+    height: vw-pc(60);
+    font-size: vw-pc(18);
+  }
+
+  .signup-btn > div {
+    height: vw-pc(60);
+  }
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .signup-btn {
+    width: 200px;
+    height: 60px;
+  }
+
+  .signup-btn a {
+    height: 60px;
+    font-size: 18px; font-size: 1.8rem;
+  }
+
+  .signup-btn > div {
+    height: 60px;
+  }
+}
+
+
+@media screen and (min-width: $breakpoint1) {
+
+  .signup-btn:hover {
+    border: vw-pc(3) solid $color-main;
+  }
+
+  .signup-btn span {
+    font-size: vw-pc(15);
+  }
+
+}
+
+@media screen and (min-width: $breakpoint2) {
+
+  .signup-btn:hover {
+    border: 3px solid $color-main;
+  }
+
+  .signup-btn span {
+    font-size: 15px; font-size: 1.5rem;
+  }
+}
+
 /*  header
 ------------------------------------------------------------------------------*/
 
@@ -199,8 +328,10 @@
 
   .navi {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    width: vw-pc(620);
+    margin-right: vw-pc(30);
+    width: calc(100% - #{vw-pc(390)} - #{vw-pc(30)});
   }
 
   .navi > div {
@@ -248,7 +379,6 @@
     text-align: center;
   }
 
-
   .login {
     margin-bottom: 0;
   }
@@ -269,7 +399,8 @@
 @media screen and (min-width: $breakpoint2) {
 
   .navi {
-    width: 600px;
+    margin-right: 30px;
+    width: calc(100% - 390px - 30px);
   }
 
   .navi > div > p {

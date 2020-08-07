@@ -32,20 +32,24 @@
         </ul>
         <div class="explan-btn">
           <p class="explan-btn-period">キャンペーンは2021年9月30日まで！</p>
-          <div class="cmn-btn cmn-btn--main cmn-btn--low">
-            <div></div>
-            <p>まずは無料オンライン説明会を予約する</p>
-          </div>
+          <CampaignCTABtn>無料オンライン説明会を予約する</CampaignCTABtn>
         </div>
       </div>
     </section>
 </template>
 
+<script>
+import CampaignCTABtn from '~/components/atoms/buttons/CampaignCTABtn.vue'
+
+export default {
+  components: {
+    CampaignCTABtn
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~assets/scss/style.scss";
-
-// main: ../style.scss
 
 /*  explan
 ------------------------------------------------------------------------------*/

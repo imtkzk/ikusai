@@ -23,19 +23,13 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ],
-    script: [
-      { src: 'js/lib/moveTo.js' },
-      { src: 'js/lib/swiper.js' },
-      { src: 'js/common.js' }
     ]
   },
   /*
   ** Global CSS
   */
   css: [  
-    '~/assets/css/style.css',
-    '~/assets/css/lib/swiper.css'
+    '~/assets/scss/style.scss'
   ],
   /*
   ** Plugins to load before mounting the App

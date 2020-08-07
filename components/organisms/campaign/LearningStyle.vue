@@ -81,16 +81,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="cta-btn">
-                        <div class="cmn-btn cmn-btn--main cmn-btn--high">
-                            <div></div>
-                            <p>より詳しく知りたい方は<br>無料オンライン説明会を予約する</p>
-                        </div>
-                    </div>
+                            <CampaignCTABtn>より詳しく知りたい方は<br>無料オンライン説明会を予約する</CampaignCTABtn>
                 </div>
             </section>
 </template>
 
+<script>
+import CampaignCTABtn from '~/components/atoms/buttons/CampaignCTABtn.vue'
+
+export default {
+  components: {
+    CampaignCTABtn
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "~assets/scss/style.scss";
@@ -153,7 +157,6 @@
   height: vw-sp(80);
   background-image: -moz-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
   background-image: -webkit-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
-  background-image: -ms-linear-gradient( 180deg, rgb(70,174,247) 0%, rgb(29,213,230) 100%);
   border-radius: vw-sp(45);
   box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
   color: $color-base;
