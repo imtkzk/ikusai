@@ -1,0 +1,33 @@
+// main: ../style.scss;
+
+$color-base: #fff;
+$color-main: #28d089;
+$color-thin: #e9f9f2;
+$color-text: #16325e;
+
+$font1: 'Noto Sans JP', sans-serif;
+$font2: 'Montserrat', sans-serif;
+
+$breakpoint1: 801px;
+$breakpoint1-max: 800px;
+$breakpoint2: 1601px;
+$breakpoint2-max: 1600px;
+$max-width: 1200px;
+$sp-width: 750;
+$pc-width: 1600;
+
+@function vw-sp($size, $viewport:750) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@function vw-pc($size, $viewport:1600) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
+@mixin marker {
+  background:linear-gradient(transparent 60%, #f9ff49 60%);
+}

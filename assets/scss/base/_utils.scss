@@ -1,0 +1,32 @@
+// main: ../style.scss
+
+/*  UTILIS
+------------------------------------------------------------------------------*/
+
+/*  配置
+-------------------------------------------------------*/
+
+.left { text-align: left; }
+.right { text-align: right; }
+.center { text-align: center; }
+
+@media screen and (max-width: $breakpoint1-max) {
+	.none--sp { display: none  !important; }
+	.br__sp { display: block; }
+  .br--pc { display: none;}
+}
+
+@media screen and (min-width: $breakpoint1) {
+	.none--pc { display: none  !important;}
+	.br__sp { display: inline; }
+  .br--sp { display: none;}
+}
+
+/*  画像
+-------------------------------------------------------*/
+
+.img--fit {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
