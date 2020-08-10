@@ -1,0 +1,667 @@
+@charset "UTF-8";
+/*  RESET CSS
+------------------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap");
+/* line 4, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/* line 10, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+*,
+::before,
+::after {
+  background-repeat: no-repeat; }
+
+/* line 16, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit; }
+
+/* line 22, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+html, body {
+  font-size: 62.5%;
+  -webkit-overflow-scrolling: touch; }
+
+/* line 27, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+html {
+  overflow-y: scroll;
+  cursor: default; }
+
+/* line 32, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+body {
+  line-height: 1;
+  font-weight: 400;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact; }
+
+/* line 41, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.4em; }
+
+/* line 47, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+ol, ul, li {
+  list-style: none; }
+
+/* line 51, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+article, aside, details, figcaption, figure,
+footer, header, main, menu, nav, section, summary {
+  display: block; }
+
+/* line 56, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 61, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+th {
+  font-weight: normal; }
+
+/* line 65, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+td, th {
+  padding: 0; }
+
+/* line 69, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+blockquote {
+  quotes: none; }
+
+/* line 73, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+/* line 78, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-text-decoration-skip: objects;
+  cursor: pointer; }
+
+/* line 86, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a:active, a:hover {
+  outline-width: 0; }
+
+/* line 90, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a:focus, *:focus {
+  outline: none; }
+
+/* line 94, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+img {
+  border-style: none;
+  vertical-align: bottom; }
+
+/* line 99, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+[type="text"],
+[type="tel"],
+[type="email"],
+[type="date"],
+[type="number"],
+[type="submit"],
+[type="button"],
+button, textarea, select {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/* line 118, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+input, select {
+  vertical-align: middle; }
+
+/* line 122, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+select {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; }
+
+/* line 129, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+select::-ms-expand {
+  display: none; }
+
+/* line 133, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+button, select {
+  text-transform: none; }
+
+/* line 137, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+button, [type="button"], [type="reset"], [type="submit"], [role="button"] {
+  cursor: pointer; }
+
+/* IEのinput要素に出てくるマークを消去 */
+/* line 142, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+input::-ms-clear {
+  visibility: hidden; }
+
+/* IEのinput要素に出てくるマークを消去 */
+/* line 147, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+input::-ms-reveal {
+  visibility: hidden; }
+
+/*  THEME CSS
+------------------------------------------------------------------------------*/
+/* line 185, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+html {
+  font-size: 62.5%; }
+
+/* line 189, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+body {
+  width: 100%;
+  height: 100%;
+  color: #16325e;
+  background-color: #fff;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 3.46667vw;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .1em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow-x: hidden; }
+
+@media screen and (min-width: 801px) {
+  /* line 205, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  body {
+    font-size: 1vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 212, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  body {
+    font-size: 1.6em; } }
+
+/*  リンク
+  -------------------------------------------------------*/
+/* line 221, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a {
+  transition: all .3s; }
+
+/* line 225, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a:hover {
+  cursor: pointer; }
+
+/* line 229, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a.on--opa {
+  display: block; }
+
+/* line 233, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+a.on--opa:hover {
+  opacity: 0.7; }
+
+/*  UTILIS
+------------------------------------------------------------------------------*/
+/*  配置
+-------------------------------------------------------*/
+/* line 244, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.left {
+  text-align: left; }
+
+/* line 248, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.right {
+  text-align: right; }
+
+/* line 252, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.center {
+  text-align: center; }
+
+@media screen and (max-width: 800px) {
+  /* line 257, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .none--sp {
+    display: none !important; }
+  /* line 261, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .br__sp {
+    display: block; }
+  /* line 265, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .br--pc {
+    display: none; } }
+
+@media screen and (min-width: 801px) {
+  /* line 271, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .none--pc {
+    display: none !important; }
+  /* line 275, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .br__sp {
+    display: inline; }
+  /* line 279, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .br--sp {
+    display: none; } }
+
+/*  画像
+-------------------------------------------------------*/
+/* line 287, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.img--fit {
+  width: 100%;
+  max-width: 100%;
+  height: auto; }
+
+/*  layout
+------------------------------------------------------------------------------*/
+/* line 296, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.container {
+  margin: 0 auto;
+  padding-top: 20vw;
+  width: 100%; }
+
+/* line 302, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.sec {
+  position: relative; }
+
+/* line 306, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.sec__in {
+  position: relative;
+  margin: 0 auto;
+  width: 92vw; }
+
+@media screen and (min-width: 801px) {
+  /* line 314, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .container {
+    padding-top: 6.25vw; }
+  /* line 318, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in {
+    width: 75vw; }
+  /* line 322, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in--small {
+    width: 62.5vw; }
+  /* line 326, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in--large {
+    width: 87.5vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 333, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .container {
+    padding-top: 100px; }
+  /* line 337, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in {
+    width: 1200px; }
+  /* line 341, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in--small {
+    width: 1000px; }
+  /* line 345, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec__in--large {
+    width: 1400px; } }
+
+/*  heading
+------------------------------------------------------------------------------*/
+/* ---------------------------------- common heading */
+/* line 355, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.cmn-head {
+  position: relative; }
+
+/* line 359, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.cmn-head__en {
+  margin-bottom: 1.3em;
+  padding-left: .15em;
+  color: #28d089;
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.33333vw;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .15em; }
+
+/* line 371, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.cmn-head__jp {
+  padding-left: .2em;
+  font-size: 5.33333vw;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .2em;
+  z-index: 2; }
+
+@media screen and (min-width: 801px) {
+  /* line 382, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head__en {
+    font-size: 0.9375vw; }
+  /* line 386, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head__jp {
+    font-size: 1.875vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 393, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head__en {
+    font-size: 15px;
+    font-size: 1.5rem; }
+  /* line 398, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head__jp {
+    font-size: 30px;
+    font-size: 3.0rem; } }
+
+/* ---------------------------------- diago heading */
+/* line 407, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.diago-header {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6vw;
+  padding: 0 2em;
+  background-color: #28d089;
+  min-width: 53.33333vw;
+  height: 8vw;
+  transform: skewX(-20deg); }
+
+/* line 419, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.diago-head {
+  color: #fff;
+  font-size: 4.53333vw;
+  font-weight: 700;
+  transform: skewX(20deg); }
+
+@media screen and (min-width: 801px) {
+  /* line 428, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .diago-header {
+    margin-bottom: 2.1875vw;
+    min-width: 18.75vw;
+    height: 2.8125vw; }
+  /* line 434, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .diago-head {
+    font-size: 1.5vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 441, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .diago-header {
+    margin-bottom: 35px;
+    min-width: 300px;
+    height: 45px; }
+  /* line 447, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .diago-head {
+    font-size: 24px;
+    font-size: 2.4rem; } }
+
+/*  style
+------------------------------------------------------------------------------*/
+/* ---------------------------------- section */
+/* line 458, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.sec--style {
+  padding: 6.66667vw 0 13.33333vw 0; }
+
+@media screen and (min-width: 801px) {
+  /* line 464, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec--style {
+    padding: 2.5vw 0 4.6875vw 0; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 471, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .sec--style {
+    padding: 40px 0 75px 0; } }
+
+/* ---------------------------------- heading */
+/* line 479, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.cmn-head--style {
+  margin-bottom: 13.33333vw; }
+
+@media screen and (min-width: 801px) {
+  /* line 485, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head--style {
+    margin-bottom: 4.375vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 492, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .cmn-head--style {
+    margin-bottom: 70px; } }
+
+/* ---------------------------------- component */
+/* line 500, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-label {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44vw;
+  height: 10.66667vw;
+  background-image: -moz-linear-gradient(180deg, #46aef7 0%, #1dd5e6 100%);
+  background-image: -webkit-linear-gradient(180deg, #46aef7 0%, #1dd5e6 100%);
+  background-image: -ms-linear-gradient(180deg, #46aef7 0%, #1dd5e6 100%);
+  border-radius: 6vw;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 4.26667vw;
+  font-weight: 700;
+  letter-spacing: .3em;
+  order: -1; }
+
+/* line 519, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-label:after {
+  content: '▼';
+  margin-left: .5em;
+  font-size: 3.46667vw; }
+
+/* line 525, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-content {
+  margin-top: 17.33333vw;
+  width: 100%;
+  display: none;
+  transition: .3s; }
+
+/* line 532, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-switch:checked + .style-tab-label {
+  background-image: none;
+  background-color: #e9f9f2;
+  box-shadow: none;
+  color: #28d089; }
+
+/* line 539, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-switch:checked + .style-tab-label:after {
+  position: absolute;
+  left: 50%;
+  bottom: -8vw;
+  margin-left: 0;
+  color: #28d089;
+  font-size: 6.13333vw;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+/* line 550, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-switch:checked + .style-tab-label + .style-tab-content {
+  display: block; }
+
+/* line 554, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tab-switch {
+  display: none; }
+
+/* line 558, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.fade {
+  animation: fadeIn 1s linear; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+/* line 572, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+
+@media screen and (min-width: 801px) {
+  /* line 581, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-label {
+    width: 36.25vw;
+    height: 4.375vw;
+    border-radius: 2.1875vw;
+    font-size: 1.5vw; }
+  /* line 588, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-label:after {
+    margin-left: 1em;
+    font-size: 1.125vw; }
+  /* line 593, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-content {
+    margin-top: 7.5vw; }
+  /* line 597, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-switch:checked + .style-tab-label:after {
+    bottom: -3.125vw;
+    font-size: 2.25vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 605, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-label {
+    width: 580px;
+    height: 70px;
+    border-radius: 35px;
+    font-size: 24px;
+    font-size: 2.4rem; }
+  /* line 613, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-label:after {
+    font-size: 18px;
+    font-size: 1.8rem; }
+  /* line 618, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-content {
+    margin-top: 120px;
+    width: 100%; }
+  /* line 623, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-tab-switch:checked + .style-tab-label:after {
+    bottom: -50px;
+    font-size: 36px;
+    font-size: 3.6rem; } }
+
+/* line 631, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style {
+  position: relative;
+  margin: 0 0 6vw 0;
+  z-index: 2; }
+
+/* line 637, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style:before {
+  content: '';
+  position: absolute;
+  top: 26.66667vw;
+  left: 50%;
+  width: 100vw;
+  height: calc(100% - 17.33333vw);
+  background-color: #e9f9f2;
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%); }
+
+/* line 650, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style li {
+  margin: 0 auto 10.66667vw auto;
+  width: 86.66667vw; }
+
+/* line 655, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-image {
+  position: relative; }
+
+/* line 659, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-head {
+  position: absolute;
+  left: 0;
+  bottom: -4.66667vw;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1em;
+  height: 9.33333vw;
+  background-color: #28d089;
+  color: #fff;
+  font-size: 3.73333vw;
+  font-weight: 700; }
+
+/* line 673, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-content {
+  padding-top: 6vw; }
+  /* line 676, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-content p {
+    line-height: 1.8em; }
+
+@media screen and (min-width: 801px) {
+  /* line 683, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style {
+    display: flex;
+    margin: 0 0 2.1875vw -3.75vw; }
+  /* line 688, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style:before {
+    top: 6.25vw;
+    width: 87.5vw;
+    height: 20.3125vw; }
+  /* line 694, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style li {
+    margin: 0 0 0 3.75vw;
+    width: calc(33.33333% - 3.75vw); }
+  /* line 699, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-head {
+    bottom: -1.25vw;
+    height: 2.5vw;
+    font-size: 1.125vw; }
+  /* line 705, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-content {
+    padding-top: 2.1875vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 712, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style {
+    margin: 0 0 35px -60px; }
+  /* line 716, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style:before {
+    top: 100px;
+    width: 1400px;
+    height: 325px; }
+  /* line 722, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style li {
+    margin: 0 0 0 60px;
+    width: calc(33.33333% - 60px); }
+  /* line 727, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-head {
+    bottom: -20px;
+    height: 40px;
+    font-size: 18px;
+    font-size: 1.8rem; }
+  /* line 734, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-content {
+    padding-top: 35px; } }
+
+/* ---------------------------------- illust */
+/* line 742, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+.style-illust {
+  display: none; }
+
+@media screen and (min-width: 801px) {
+  /* line 748, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust {
+    position: absolute;
+    display: block; }
+  /* line 753, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust01 {
+    top: 16.875vw;
+    left: -1.25vw;
+    width: 10.3125vw; }
+  /* line 759, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust02 {
+    bottom: 4.0625vw;
+    left: -1.25vw;
+    width: 13.0625vw; }
+  /* line 765, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust03 {
+    bottom: 1.875vw;
+    right: -1.25vw;
+    width: 8.9375vw; } }
+
+@media screen and (min-width: 1601px) {
+  /* line 774, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust01 {
+    top: 280px;
+    left: 0;
+    width: 165px; }
+  /* line 780, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust02 {
+    bottom: 65px;
+    left: 0;
+    width: 209px; }
+  /* line 786, /Users/imotokazuki_desktop/Desktop/campaign_01/assets/scss/style.scss */
+  .style-illust03 {
+    bottom: 40px;
+    right: 0;
+    width: 143px; } }
+
+/*# sourceMappingURL=style.css.map */

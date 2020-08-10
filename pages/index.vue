@@ -3,15 +3,13 @@
         <Header />
         <div class="container">
             <Hero />
-            <Benefit />
-            <Explain />
+            <Campaign />
             <Course />
-            <Flow />
-            <LearningStyle />
-            <AvailableContents />
-            <Allowance />
-            <CampaignForm />
-            <QnA />
+            <What />
+            <Reason />
+            <Interview />
+            <Apply />
+            <About />
         </div>
         <Footer />
     </div>
@@ -19,31 +17,26 @@
 
 <script>
     import Header from '~/components/organisms/common/Header.vue'
-    import Hero from '~/components/organisms/campaign/Hero.vue'
-    import Benefit from '~/components/organisms/campaign/Benefit.vue'
-    import Explain from '~/components/organisms/campaign/Explain.vue'
-    import Course from '~/components/organisms/campaign/Course.vue'
-    import Flow from '~/components/organisms/campaign/Flow.vue'
-    import LearningStyle from '~/components/organisms/campaign/LearningStyle.vue'
-    import AvailableContents from '~/components/organisms/campaign/AvailableContents.vue'
-    import Allowance from '~/components/organisms/campaign/Allowance.vue'
-    import CampaignForm from '~/components/organisms/campaign/CampaignForm.vue'
-    import QnA from '~/components/organisms/campaign/QnA.vue'
+    import Hero from '~/components/organisms/top/Hero.vue'
+    import Campaign from '~/components/organisms/top/Campaign.vue'
+    import Course from '~/components/organisms/top/Course.vue'
+    import What from '~/components/organisms/top/What.vue'
+    import Reason from '~/components/organisms/top/Reason.vue'
+    import Interview from '~/components/organisms/top/Interview.vue'
+    import Apply from '~/components/organisms/top/Apply.vue'
+    import About from '~/components/organisms/top/About.vue'
     import Footer from '~/components/organisms/common/Footer.vue'
 
     export default {
         components: {
             Header,
             Hero,
-            Benefit,
-            Explain,
+            Campaign,
             Course,
-            Flow,
-            LearningStyle,
-            AvailableContents,
-            Allowance,
-            CampaignForm,
-            QnA,
+            What,
+            Reason,
+            Apply,
+            About,
             Footer
         }
     }
